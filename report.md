@@ -30,18 +30,18 @@ Note:
 I chose LogisticRegression and LightGBM as classifiers with the consideration of quick computation, the natural of imbalanced dataset, and the explainitory of the model. The dataset is split 50-50 to training set and testing set. The result is showned in jupyter notebook. It worth noting that
 
 
-1. Both model select 
+1. Both model selected the following feature/value to be the top 4 important indicator of a fraud job post.
+
 
 - `has_questions`: `0`
 - `required_education`: `High School or equivalent`
 - `has_company_logo`: `0`
 - `industry`: `Oil & Energy`
 
-to be the top 4 important indicator of a fraud job post.
 
-2. I tried with different hyper-parameters like number of folds of cross-validation, penalty, ratio of training/testing set. It all produce similar result and tendency. I believe it suggests there exist some salient pattern of fradulent job posts. 
+2. I tried with different hyper-parameters like number of folds of cross-validation, penalty, ratio of training/testing set. They all produced similar results and tendency. I believe it suggested there existed some salient pattern of fradulent job posts. 
 
-3. LightGBM produce very nice & balanced results, with f1=0.6326 and precision=0.8544. If sensitivy is not an issue, I think I'd deploy this model after some more dedicate tuning.
+3. LightGBM produced nice & balanced results, with f1=0.6326 and precision=0.8544. If sensitivy is not an issue, I think I'd deploy this model after some more dedicate tuning.
 
 4. Liblinear sometimes could not converge due to the sparsity of the positive label. 
 
@@ -56,6 +56,7 @@ I use the same feature and build a rather simple deep neural net which has 3 lin
 
 # Results
 
+```
 Result(acc=0.9553, f1=0.2866, precision=0.7273, recall=0.1784) LogisticRegressionCV(cv=3, random_state=123, solver='newton-cholesky')
 Result(acc=0.9553, f1=0.2866, precision=0.7273, recall=0.1784) LogisticRegressionCV(cv=3, random_state=123, solver='liblinear')
 Result(acc=0.8048, f1=0.2927, precision=0.1790, recall=0.8030) LogisticRegressionCV(class_weight='balanced', cv=3, random_state=123, solver='liblinear')
@@ -65,7 +66,7 @@ Result(acc=0.9729, f1=0.6742, precision=0.8523, recall=0.5576) LGBMClassifier(ra
 Result(acc=0.9748, f1=0.6980, precision=0.8764, recall=0.5799) Deep Learning: CrossEntropyLoss epoch 7
 Result(acc=0.9265, f1=0.5293, precision=0.3905, recall=0.8216) Deep Learning: CrossEntropyLoss(weighed) epoch 7
 Result(acc=0.9740, f1=0.7036, precision=0.8250, recall=0.6134) Deep Learning: CrossEntropyLoss(label_smoothing) Epoch 1
-
+```
 
 
 # Deployment
