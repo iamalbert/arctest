@@ -51,7 +51,7 @@ I used the same feature set and built a simple deep neural net which had 3 linea
 
 1. **Weighed loss**. Setting positive class to a bigger wight (10, 20, 30) did not benefit the model as expected. It did force the model to have a high recall but also resulted in low precision and F1.
 
-2. **Label smoothing**. It softened the probabilities of labels by adding a small noise. It was very useful top stop overfitting on such small dataset. I tried 1%, 5%, and 10% and they all seemed to work in a similar way and slightly better than previous settings. One unexpected suprise is that that model with label smoothing converged rapidly within mere one or two epoches. 
+2. **Label smoothing**. It softened the probabilities of labels by adding a small noise. It was very useful to prevent overfitting on such small dataset. I tried 1%, 5%, and 10% and they all seemed to work in a similar way and slightly better than previous settings. One unexpected suprise was that, models with label smoothing converged rapidly within mere one or two epoches. 
 
 # Results
 
